@@ -1,55 +1,49 @@
-# Workflow Example: Book Chapter Development
+# Workflow: Authority Content Development
 
-> A focused single-agent workflow for turning rough source material into a strategic first-person chapter draft with explicit revision loops.
+> Turn a practitioner's expertise into a published thought leadership piece — blog post, guest article, or chapter draft.
 
-## When to Use This
+## When to Use
 
-Use this workflow when an author has voice notes, fragments, or strategic notes, but not yet a clean chapter draft. The goal is not generic ghostwriting. The goal is to produce a chapter that strengthens category positioning, preserves the author's voice, and exposes open editorial decisions clearly.
+When a client (healthcare practitioner or local business owner) has raw expertise — voice notes, fragments, talking points — but not a clean published piece. The goal is positioning content that builds authority and drives referrals.
 
 ## Agent Used
 
 | Agent | Role |
 |-------|------|
-| Book Co-Author | Converts source material into a versioned chapter draft with editorial notes and next-step questions |
+| Authority Content Strategist | Strategy, placement, and coaching |
+| Content Creator | Writing, editing, formatting |
 
-## Example Activation
+## Workflow
 
-```text
-Activate Book Co-Author.
+### Step 1: Topic & Angle Selection
+- Authority Content Strategist identifies the best topic based on client expertise and audience need
+- Define the target platform (LinkedIn article, guest blog, local publication, podcast prep)
+- Establish key messages and unique angle
 
-Book goal: Build authority around practical AI adoption for Mittelstand companies.
-Target audience: Owners and operational leaders of 20-200 person businesses.
-Chapter topic: Why most AI projects fail before implementation starts.
-Desired draft maturity: First substantial draft.
+### Step 2: Source Material Collection
+- Gather raw inputs: voice notes, interview transcripts, existing content, talking points
+- Identify the practitioner's unique perspective and experience stories
+- Note credentials and E-E-A-T signals to include
 
-Raw material:
-- Voice memo: "The real failure happens in expectation setting, not tooling."
-- Notes: Leaders buy software before defining the operational bottleneck.
-- Story fragment: We nearly rolled out the wrong automation in a cabinetmaking workflow because the actual problem was quoting delays, not production throughput.
-- Positioning angle: Practical realism over hype.
+### Step 3: First Draft
+- Content Creator produces draft in the practitioner's voice
+- Include specific examples, case references (anonymized for healthcare), and actionable insights
+- Structure for the target platform's format and length requirements
 
-Produce:
-1. Chapter objective and strategic role in the book
-2. Any clarification questions you need
-3. Chapter 2 - Version 1 - ready for review
-4. Editorial notes on assumptions and proof gaps
-5. Specific next-step revision requests
-```
+### Step 4: Review & Revision
+- Client reviews draft for accuracy and voice authenticity
+- Content Creator incorporates feedback (maximum 2 revision cycles)
+- Authority Content Strategist reviews for positioning effectiveness
 
-## Expected Output Shape
+### Step 5: Publication & Distribution
+- Format for target platform
+- Submit or publish with appropriate SEO metadata
+- Create social media excerpts for promotion
+- Track engagement and referral traffic
 
-The Book Co-Author should respond in five parts:
+## Quality Gate
+- Factual accuracy confirmed by the practitioner
+- Healthcare compliance review if medical content is included
+- Voice authenticity: reads like the practitioner, not a ghostwriter
 
-1. `Target Outcome`
-2. `Chapter Draft`
-3. `Editorial Notes`
-4. `Feedback Loop`
-5. `Next Step`
-
-## Quality Bar
-
-- The draft stays in first-person voice
-- The chapter has one clear promise and internal logic
-- Claims are tied to source material or flagged as assumptions
-- Generic motivational language is removed
-- The output ends with explicit revision questions, not a vague handoff
+## Total Time: 3-5 days from intake to publication

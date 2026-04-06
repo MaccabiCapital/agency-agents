@@ -1,278 +1,113 @@
-# ⚙️ Phase 2 Playbook — Foundation & Scaffolding
+# Phase 2 — Foundation Setup
 
-> **Duration**: 3-5 days | **Agents**: 6 | **Gate Keepers**: DevOps Automator + Evidence Collector
+**Objective**: Get all infrastructure in place before any build work starts. No website, no automations, no content until the foundation is stable.
+
+**Agents**: Automation Lead (lead), Web Lead (support), Operations Lead (coordination)
+**Duration**: 1–3 days
+**Output**: GHL sub-account configured, domain/hosting live, pipeline stages set up
 
 ---
 
-## Objective
+## Inputs Required Before Starting
 
-Build the technical and operational foundation that all subsequent work depends on. Get the skeleton standing before adding muscle. After this phase, every developer has a working environment, a deployable pipeline, and a design system to build with.
+- [ ] Signed scope from Phase 1
+- [ ] Client's domain name and registrar access (or decision to use a new domain)
+- [ ] Hosting platform decision (existing or new — Cloudflare, WP Engine, GHL sites, etc.)
+- [ ] GHL agency access confirmed
+- [ ] Client brand assets: logo, colors, fonts (or note these are TBD)
 
-## Pre-Conditions
+---
 
-- [ ] Phase 1 Quality Gate passed (Architecture Package approved)
-- [ ] Phase 1 Handoff Package received
-- [ ] All architecture documents finalized
+## Step 1: GHL Sub-Account Setup
 
-## Agent Activation Sequence
+Automation Lead owns this.
 
-### Workstream A: Infrastructure (Day 1-3, Parallel)
+- [ ] Create new sub-account under agency account
+- [ ] Name convention: `[ClientName] - [City]` or per agency standard
+- [ ] Apply applicable GHL snapshot (healthcare / local service / generic)
+- [ ] Configure business info: name, address, phone, email, timezone
+- [ ] Connect client phone number (A2P verified or Twilio sub-account)
+- [ ] Set up sending domain for email (or use agency domain with subdomain)
+- [ ] Verify sending: send test SMS and email, confirm delivery
+- [ ] Set up user access: client login created with appropriate permissions
 
-#### 🚀 DevOps Automator — CI/CD Pipeline + Infrastructure
+---
+
+## Step 2: Pipeline Configuration
+
+- [ ] Define pipeline stages (standard starting point):
+  - New Lead
+  - Contacted
+  - Appointment Booked
+  - Appointment Completed
+  - Won / Client
+  - Lost / Not Interested
+- [ ] Adjust stages to match client's actual sales process
+- [ ] Configure lead source tags (website form, GBP call, referral, etc.)
+- [ ] Set up basic opportunity card fields: lead name, service interested in, notes
+
+---
+
+## Step 3: Domain & Hosting
+
+Web Lead supports.
+
+- [ ] Confirm domain ownership and registrar access
+- [ ] Point domain to hosting platform (or prepare for DNS cutover at launch)
+- [ ] Set up staging environment: `staging.[domain].com` or equivalent
+- [ ] Confirm SSL certificate will be issued on go-live
+- [ ] If using GHL Sites: configure custom domain in sub-account settings
+- [ ] If using WordPress: install WP, select/install theme framework, confirm admin access
+
+---
+
+## Step 4: Analytics & Tracking Setup
+
+- [ ] Google Analytics 4: property created or access confirmed
+- [ ] Google Search Console: property verified (DNS or HTML tag)
+- [ ] GBP access: confirm client has agency access to GBP or transfer initiated
+- [ ] Call tracking: configure GHL call tracking number if applicable
+- [ ] UTM convention: document UTM structure for all paid or tracked sources
+
+---
+
+## Step 5: Integration Pre-Work
+
+- [ ] Identify all integrations needed (calendar, EHR, payment, etc.)
+- [ ] Confirm API keys, credentials, or OAuth access for each
+- [ ] Document any integrations that need client action to unlock
+- [ ] Note: integrations that are blocked by missing credentials are flagged as Phase 3 risks
+
+---
+
+## Step 6: Foundation Handoff to Build Team
+
+Document and hand off to Web Lead and Automation Lead for Phase 3:
+
 ```
-Activate DevOps Automator for infrastructure setup on [PROJECT].
-
-Input: Backend Architect system architecture + deployment requirements
-Deliverables required:
-1. CI/CD Pipeline (GitHub Actions / GitLab CI)
-   - Security scanning stage
-   - Automated testing stage
-   - Build and containerization stage
-   - Deployment stage (blue-green or canary)
-   - Automated rollback capability
-2. Infrastructure as Code
-   - Environment provisioning (dev, staging, production)
-   - Container orchestration setup
-   - Network and security configuration
-3. Environment Configuration
-   - Secrets management
-   - Environment variable management
-   - Multi-environment parity
-
-Files to create:
-- .github/workflows/ci-cd.yml (or equivalent)
-- infrastructure/ (Terraform/CDK templates)
-- docker-compose.yml
-- Dockerfile(s)
-
-Format: Working CI/CD pipeline with IaC templates
-Timeline: 3 days
-```
-
-#### 🏗️ Infrastructure Maintainer — Cloud Infrastructure + Monitoring
-```
-Activate Infrastructure Maintainer for monitoring setup on [PROJECT].
-
-Input: DevOps Automator infrastructure + Backend Architect architecture
-Deliverables required:
-1. Cloud Resource Provisioning
-   - Compute, storage, networking resources
-   - Auto-scaling configuration
-   - Load balancer setup
-2. Monitoring Stack
-   - Application metrics (Prometheus/DataDog)
-   - Infrastructure metrics
-   - Custom dashboards (Grafana)
-3. Logging and Alerting
-   - Centralized log aggregation
-   - Alert rules for critical thresholds
-   - On-call notification setup
-4. Security Hardening
-   - Firewall rules
-   - SSL/TLS configuration
-   - Access control policies
-
-Format: Infrastructure Readiness Report with dashboard access
-Timeline: 3 days
-```
-
-#### ⚙️ Studio Operations — Process Setup
-```
-Activate Studio Operations for process setup on [PROJECT].
-
-Input: Sprint Prioritizer plan + Project Shepherd coordination needs
-Deliverables required:
-1. Git Workflow
-   - Branch strategy (GitFlow / trunk-based)
-   - PR review process
-   - Merge policies
-2. Communication Channels
-   - Team channels setup
-   - Notification routing
-   - Status update cadence
-3. Documentation Templates
-   - PR template
-   - Issue template
-   - Decision log template
-4. Collaboration Tools
-   - Project board setup
-   - Sprint tracking configuration
-
-Format: Operations Playbook
-Timeline: 2 days
-```
-
-### Workstream B: Application Foundation (Day 1-4, Parallel)
-
-#### 🎨 Frontend Developer — Project Scaffolding + Component Library
-```
-Activate Frontend Developer for project scaffolding on [PROJECT].
-
-Input: UX Architect CSS Design System + Brand Guardian identity
-Deliverables required:
-1. Project Scaffolding
-   - Framework setup (React/Vue/Angular per architecture)
-   - TypeScript configuration
-   - Build tooling (Vite/Webpack/Next.js)
-   - Testing framework (Jest/Vitest + Testing Library)
-2. Design System Implementation
-   - CSS design tokens from UX Architect
-   - Base component library (Button, Input, Card, Layout)
-   - Theme system (light/dark/system toggle)
-   - Responsive utilities
-3. Application Shell
-   - Routing setup
-   - Layout components (Header, Footer, Sidebar)
-   - Error boundary implementation
-   - Loading states
-
-Files to create:
-- src/ (application source)
-- src/components/ (component library)
-- src/styles/ (design tokens)
-- src/layouts/ (layout components)
-
-Format: Working application skeleton with component library
-Timeline: 3 days
-```
-
-#### 🏗️ Backend Architect — Database + API Foundation
-```
-Activate Backend Architect for API foundation on [PROJECT].
-
-Input: System Architecture Specification + Database Schema Design
-Deliverables required:
-1. Database Setup
-   - Schema deployment (migrations)
-   - Index creation
-   - Seed data for development
-   - Connection pooling configuration
-2. API Scaffold
-   - Framework setup (Express/FastAPI/etc.)
-   - Route structure matching architecture
-   - Middleware stack (auth, validation, error handling, CORS)
-   - Health check endpoints
-3. Authentication System
-   - Auth provider integration
-   - JWT/session management
-   - Role-based access control scaffold
-4. Service Communication
-   - API versioning setup
-   - Request/response serialization
-   - Error response standardization
-
-Files to create:
-- api/ or server/ (backend source)
-- migrations/ (database migrations)
-- docs/api-spec.yaml (OpenAPI specification)
-
-Format: Working API scaffold with database and auth
-Timeline: 4 days
-```
-
-#### 🏛️ UX Architect — CSS System Implementation
-```
-Activate UX Architect for CSS system implementation on [PROJECT].
-
-Input: Brand Guardian identity + own Phase 1 CSS Design System spec
-Deliverables required:
-1. Design Tokens Implementation
-   - CSS custom properties (colors, typography, spacing)
-   - Brand color palette with semantic naming
-   - Typography scale with responsive adjustments
-2. Layout System
-   - Container system (responsive breakpoints)
-   - Grid patterns (2-col, 3-col, sidebar)
-   - Flexbox utilities
-3. Theme System
-   - Light theme variables
-   - Dark theme variables
-   - System preference detection
-   - Theme toggle component
-   - Smooth transition between themes
-
-Files to create/update:
-- css/design-system.css (or equivalent in framework)
-- css/layout.css
-- css/components.css
-- js/theme-manager.js
-
-Format: Implemented CSS design system with theme toggle
-Timeline: 2 days
-```
-
-## Verification Checkpoint (Day 4-5)
-
-### Evidence Collector Verification
-```
-Activate Evidence Collector for Phase 2 foundation verification.
-
-Verify the following with screenshot evidence:
-1. CI/CD pipeline executes successfully (show pipeline logs)
-2. Application skeleton loads in browser (desktop screenshot)
-3. Application skeleton loads on mobile (mobile screenshot)
-4. Theme toggle works (light + dark screenshots)
-5. API health check responds (curl output)
-6. Database is accessible (migration status)
-7. Monitoring dashboards are active (dashboard screenshot)
-8. Component library renders (component demo page)
-
-Format: Evidence Package with screenshots
-Verdict: PASS / FAIL with specific issues
-```
-
-## Quality Gate Checklist
-
-| # | Criterion | Evidence Source | Status |
-|---|-----------|----------------|--------|
-| 1 | CI/CD pipeline builds, tests, and deploys | Pipeline execution logs | ☐ |
-| 2 | Database schema deployed with all tables/indexes | Migration success output | ☐ |
-| 3 | API scaffold responding on health check | curl response evidence | ☐ |
-| 4 | Frontend skeleton renders in browser | Evidence Collector screenshots | ☐ |
-| 5 | Monitoring dashboards showing metrics | Dashboard screenshots | ☐ |
-| 6 | Design system tokens implemented | Component library demo | ☐ |
-| 7 | Theme toggle functional (light/dark/system) | Before/after screenshots | ☐ |
-| 8 | Git workflow and processes documented | Studio Operations playbook | ☐ |
-
-## Gate Decision
-
-**Dual sign-off required**: DevOps Automator (infrastructure) + Evidence Collector (visual)
-
-- **PASS**: Working skeleton with full DevOps pipeline → Phase 3 activation
-- **FAIL**: Specific infrastructure or application issues → Fix and re-verify
-
-## Handoff to Phase 3
-
-```markdown
-## Phase 2 → Phase 3 Handoff Package
-
-### For all Developer Agents:
-- Working CI/CD pipeline (auto-deploys on merge)
-- Design system tokens and component library
-- API scaffold with auth and health checks
-- Database with schema and seed data
-- Git workflow and PR process
-
-### For Evidence Collector (ongoing QA):
-- Application URLs (dev, staging)
-- Screenshot capture methodology
-- Component library reference
-- Brand guidelines for visual verification
-
-### For Agents Orchestrator (Dev↔QA loop management):
-- Sprint Prioritizer backlog (from Phase 1)
-- Task list with acceptance criteria (from Phase 1)
-- Agent assignment matrix (from NEXUS strategy)
-- Quality thresholds for each task type
-
-### Environment Access:
-- Dev environment: [URL]
-- Staging environment: [URL]
-- Monitoring dashboard: [URL]
-- CI/CD pipeline: [URL]
-- API documentation: [URL]
+FOUNDATION SUMMARY — [CLIENT NAME]
+────────────────────────────────────
+GHL sub-account: [ID / name]
+Pipeline stages: [list]
+Sending: SMS [confirmed / pending] | Email [confirmed / pending]
+Staging URL: [URL]
+Hosting: [provider + access location]
+Domain registrar: [provider + access location]
+GA4: [property ID]
+GSC: [verified / pending]
+GBP access: [confirmed / pending]
+Integrations needed: [list] | Blocked on: [any pending credentials]
+Client assets received: [logo yes/no] [colors yes/no] [photos yes/no] [copy yes/no]
 ```
 
 ---
 
-*Phase 2 is complete when the skeleton application is running, the CI/CD pipeline is operational, and the Evidence Collector has verified all foundation elements with screenshots.*
+## Quality Gate: Phase 2 → Phase 3
+
+PASS requires:
+- [ ] GHL sub-account created, sending verified (test SMS + email received)
+- [ ] Pipeline stages configured
+- [ ] Staging environment accessible via URL
+- [ ] GA4 and GSC properties set up
+- [ ] Foundation summary doc handed off to build team
+- [ ] Any blocked integrations flagged with a plan

@@ -1,119 +1,53 @@
-# Multi-Agent Workflow: Landing Page Sprint
+# Workflow: Campaign Landing Page Sprint
 
-> Ship a conversion-optimized landing page in one day using 4 agents.
+> Build a conversion-optimized landing page for a local service business in one day using 4 agents.
 
-## The Scenario
+## Scenario
 
-You need a landing page for a new product launch. It needs to look great, convert visitors, and be live by end of day.
+A dental practice is running Google Ads and needs a landing page for "teeth whitening [city]." The page needs to load fast, capture leads, and route them into GHL for automated follow-up.
 
 ## Agent Team
 
-| Agent | Role in this workflow |
-|-------|---------------------|
-| Content Creator | Write the copy |
-| UI Designer | Design the layout and component specs |
-| Frontend Developer | Build it |
-| Growth Hacker | Optimize for conversion |
+| Agent | Role in This Sprint |
+|-------|-------------------|
+| UX Architect | Wireframe the page structure and conversion flow |
+| UI Designer | Visual design with dental practice branding |
+| Website & Landing Page Developer | Build the page, connect forms to GHL |
+| Reality Checker | QA the page before ads point to it |
 
-## The Workflow
+## Workflow
 
-### Morning: Copy + Design (parallel)
+### Step 1: UX Architect (1-2 hours)
+- Review the ad copy and keyword targets
+- Wireframe the landing page: headline → trust signals → service details → CTA → form
+- Specify mobile layout (60-70% of traffic will be mobile)
+- Output: annotated wireframe with CTA placement and form fields
 
-**Step 1a — Activate Content Creator**
+### Step 2: UI Designer (2-3 hours)
+- Apply dental practice brand (logo, colors, fonts)
+- Design desktop and mobile mockups from wireframe
+- Select/create hero image and trust signal elements
+- Output: design mockups ready for development
 
-```
-Activate Content Creator.
+### Step 3: Website & Landing Page Developer (3-4 hours)
+- Build the page in GHL or standalone HTML
+- Connect form to GHL pipeline with UTM pass-through
+- Implement tracking: GTM, GA4 event, Google Ads conversion tag
+- Optimize for speed: compress images, minimize scripts, target LCP < 2.5s
+- Set up thank-you page with next steps
 
-Write landing page copy for "FlowSync" — an API integration platform
-that connects any two SaaS tools in under 5 minutes.
+### Step 4: Reality Checker (1-2 hours)
+- Submit test form and verify data arrives in GHL
+- Check mobile rendering on 3 device sizes
+- Verify tracking fires correctly (GTM debug mode)
+- Run PageSpeed Insights and verify Core Web Vitals pass
+- Verdict: APPROVED or NEEDS WORK with specific defects
 
-Target audience: developers and technical PMs at mid-size companies.
-Tone: confident, concise, slightly playful.
+## Quality Gate
+Page does not receive ad traffic until Reality Checker issues APPROVED verdict with:
+- Form submission proof (GHL contact screenshot)
+- Mobile screenshot evidence
+- PageSpeed Insights passing score
+- Tracking verification (GTM debug screenshot)
 
-Sections needed:
-1. Hero (headline + subheadline + CTA)
-2. Problem statement (3 pain points)
-3. How it works (3 steps)
-4. Social proof (placeholder testimonial format)
-5. Pricing (3 tiers: Free, Pro, Enterprise)
-6. Final CTA
-
-Keep it scannable. No fluff.
-```
-
-**Step 1b — Activate UI Designer (in parallel)**
-
-```
-Activate UI Designer.
-
-Design specs for a SaaS landing page. Product: FlowSync (API integration platform).
-Style: clean, modern, dark mode option. Think Linear or Vercel aesthetic.
-
-Deliver:
-1. Layout wireframe (section order + spacing)
-2. Color palette (primary, secondary, accent, background)
-3. Typography (font pairing, heading sizes, body size)
-4. Component specs: hero section, feature cards, pricing table, CTA buttons
-5. Responsive breakpoints (mobile, tablet, desktop)
-```
-
-### Midday: Build
-
-**Step 2 — Activate Frontend Developer**
-
-```
-Activate Frontend Developer.
-
-Build a landing page from these specs:
-
-Copy: [paste Content Creator output]
-Design: [paste UI Designer output]
-
-Stack: HTML, Tailwind CSS, minimal vanilla JS (no framework needed).
-Requirements:
-- Responsive (mobile-first)
-- Fast (no heavy assets, system fonts OK)
-- Accessible (proper headings, alt text, focus states)
-- Include a working email signup form (action URL: /api/subscribe)
-
-Deliver a single index.html file ready to deploy.
-```
-
-### Afternoon: Optimize
-
-**Step 3 — Activate Growth Hacker**
-
-```
-Activate Growth Hacker.
-
-Review this landing page for conversion optimization:
-
-[paste the HTML or describe the current page]
-
-Evaluate:
-1. Is the CTA above the fold?
-2. Is the value proposition clear in under 5 seconds?
-3. Any friction in the signup flow?
-4. What A/B tests would you run first?
-5. SEO basics: meta tags, OG tags, structured data
-
-Give me specific changes, not general advice.
-```
-
-## Timeline
-
-| Time | Activity | Agent |
-|------|----------|-------|
-| 9:00 | Copy + design kick off (parallel) | Content Creator + UI Designer |
-| 11:00 | Build starts | Frontend Developer |
-| 14:00 | First version ready | — |
-| 14:30 | Conversion review | Growth Hacker |
-| 15:30 | Apply feedback | Frontend Developer |
-| 16:30 | Ship | Deploy to Vercel/Netlify |
-
-## Key Patterns
-
-1. **Parallel kickoff**: Copy and design happen at the same time since they're independent
-2. **Merge point**: Frontend Developer needs both outputs before starting
-3. **Feedback loop**: Growth Hacker reviews, then Frontend Developer applies changes
-4. **Time-boxed**: Each step has a clear timebox to prevent scope creep
+## Total Time: 6-10 hours across 4 agents

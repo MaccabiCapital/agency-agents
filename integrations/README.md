@@ -1,174 +1,40 @@
-# 🔌 Integrations
+# Integrations
 
-This directory contains The Agency integrations and converted formats for
-supported agentic coding tools.
+RescueMyWorkday agent definitions work with multiple agentic coding tools. Each integration converts or installs the agent markdown files into the format required by the target tool.
 
 ## Supported Tools
 
-- **[Claude Code](#claude-code)** — `.md` agents, use the repo directly
-- **[GitHub Copilot](#github-copilot)** — `.md` agents, use the repo directly
-- **[Antigravity](#antigravity)** — `SKILL.md` per agent in `antigravity/`
-- **[Gemini CLI](#gemini-cli)** — extension + `SKILL.md` files in `gemini-cli/`
-- **[OpenCode](#opencode)** — `.md` agent files in `opencode/`
-- **[OpenClaw](#openclaw)** — `SOUL.md` + `AGENTS.md` + `IDENTITY.md` workspaces
-- **[Cursor](#cursor)** — `.mdc` rule files in `cursor/`
-- **[Aider](#aider)** — `CONVENTIONS.md` in `aider/`
-- **[Windsurf](#windsurf)** — `.windsurfrules` in `windsurf/`
+| Tool | Format | Notes |
+|------|--------|-------|
+| [Claude Code](claude-code/) | `.md` with YAML frontmatter | Native format — no conversion needed |
+| [GitHub Copilot](github-copilot/) | `.md` with YAML frontmatter | Native format — no conversion needed |
+| [Cursor](cursor/) | `.mdc` rule files | Project-scoped rules |
+| [Windsurf](windsurf/) | `.windsurfrules` | Single consolidated file |
+| [Aider](aider/) | `CONVENTIONS.md` | Single consolidated file |
+| [Gemini CLI](gemini-cli/) | Extension package | Installs to `~/.gemini/extensions/` |
+| [OpenCode](opencode/) | `.md` in `.opencode/agents/` | Subagent mode |
+| [OpenClaw](openclaw/) | Workspace format | `SOUL.md`, `AGENTS.md`, `IDENTITY.md` |
+| [Antigravity](antigravity/) | `SKILL.md` per agent | Prefixed with `rmw-` |
+| [MCP Memory](mcp-memory/) | Add-on | Persistent memory across sessions |
 
-## Quick Install
+## Installation
 
-```bash
-# Install for all detected tools automatically
-./scripts/install.sh
-
-# Install a specific home-scoped tool
-./scripts/install.sh --tool antigravity
-./scripts/install.sh --tool copilot
-./scripts/install.sh --tool openclaw
-./scripts/install.sh --tool claude-code
-
-# Gemini CLI needs generated integration files on a fresh clone
-./scripts/convert.sh --tool gemini-cli
-./scripts/install.sh --tool gemini-cli
-```
-
-For project-scoped tools such as OpenCode, Cursor, Aider, and Windsurf, run
-the installer from your target project root as shown in the tool-specific
-sections below.
-
-## Regenerating Integration Files
-
-If you add or modify agents, regenerate all integration files:
+Each integration directory has its own README with specific install instructions. General pattern:
 
 ```bash
-./scripts/convert.sh
+# Generate integration files
+./scripts/convert.sh --tool <tool-name>
+
+# Install to your project
+./scripts/install.sh --tool <tool-name>
 ```
 
----
+## Paperclip Import
 
-## Claude Code
-
-The Agency was originally designed for Claude Code. Agents work natively
-without conversion.
+For Paperclip users, import this repo directly as a company:
 
 ```bash
-cp -r <category>/*.md ~/.claude/agents/
-# or install everything at once:
-./scripts/install.sh --tool claude-code
+npx companies.sh add MaccabiCapital/agency-agents
 ```
 
-See [claude-code/README.md](claude-code/README.md) for details.
-
----
-
-## GitHub Copilot
-
-The Agency also works natively with GitHub Copilot. Agents can be copied
-directly into `~/.github/agents/` and `~/.copilot/agents/` without conversion.
-
-```bash
-./scripts/install.sh --tool copilot
-```
-
-See [github-copilot/README.md](github-copilot/README.md) for details.
-
----
-
-## Antigravity
-
-Skills are installed to `~/.gemini/antigravity/skills/`. Each agent becomes
-a separate skill prefixed with `agency-` to avoid naming conflicts.
-
-```bash
-./scripts/install.sh --tool antigravity
-```
-
-See [antigravity/README.md](antigravity/README.md) for details.
-
----
-
-## Gemini CLI
-
-Agents are packaged as a Gemini CLI extension with individual skill files.
-The extension is installed to `~/.gemini/extensions/agency-agents/`.
-Because the Gemini manifest and skill folders are generated artifacts, run
-`./scripts/convert.sh --tool gemini-cli` before installing from a fresh clone.
-
-```bash
-./scripts/convert.sh --tool gemini-cli
-./scripts/install.sh --tool gemini-cli
-```
-
-See [gemini-cli/README.md](gemini-cli/README.md) for details.
-
----
-
-## OpenCode
-
-Each agent becomes a project-scoped `.md` file in `.opencode/agents/`.
-
-```bash
-cd /your/project && /path/to/agency-agents/scripts/install.sh --tool opencode
-```
-
-See [opencode/README.md](opencode/README.md) for details.
-
----
-
-## OpenClaw
-
-Each agent becomes an OpenClaw workspace containing `SOUL.md`, `AGENTS.md`,
-and `IDENTITY.md`.
-
-Before installing, generate the OpenClaw workspaces:
-
-```bash
-./scripts/convert.sh --tool openclaw
-```
-
-Then install them:
-
-```bash
-./scripts/install.sh --tool openclaw
-```
-
-See [openclaw/README.md](openclaw/README.md) for details.
-
----
-
-## Cursor
-
-Each agent becomes a `.mdc` rule file. Rules are project-scoped — run the
-installer from your project root.
-
-```bash
-cd /your/project && /path/to/agency-agents/scripts/install.sh --tool cursor
-```
-
-See [cursor/README.md](cursor/README.md) for details.
-
----
-
-## Aider
-
-All agents are consolidated into a single `CONVENTIONS.md` file that Aider
-reads automatically when present in your project root.
-
-```bash
-cd /your/project && /path/to/agency-agents/scripts/install.sh --tool aider
-```
-
-See [aider/README.md](aider/README.md) for details.
-
----
-
-## Windsurf
-
-All agents are consolidated into a single `.windsurfrules` file for your
-project root.
-
-```bash
-cd /your/project && /path/to/agency-agents/scripts/install.sh --tool windsurf
-```
-
-See [windsurf/README.md](windsurf/README.md) for details.
+Or clone and import from your local copy after customization.

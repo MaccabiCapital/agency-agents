@@ -4,7 +4,7 @@
 
 ## What It Does
 
-By default, agents in The Agency start every session from scratch. Context is passed manually via copy-paste between agents and sessions. An MCP memory server changes that:
+By default, RescueMyWorkday agents start every session from scratch. Context is passed manually via copy-paste between agents and sessions. An MCP memory server changes that:
 
 - **Cross-session memory**: An agent remembers decisions, deliverables, and context from previous sessions
 - **Handoff continuity**: When one agent hands off to another, the receiving agent can recall exactly what was done — no copy-paste required

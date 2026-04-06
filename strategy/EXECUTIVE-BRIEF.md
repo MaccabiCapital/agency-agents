@@ -1,67 +1,76 @@
-# 📑 NEXUS Executive Brief
+# RescueMyWorkday — Executive Operating Brief
 
-## Network of EXperts, Unified in Strategy
+## Company at a Glance
+
+RescueMyWorkday is an AI-assisted operating company serving small service businesses — primarily healthcare practices and local-service operators. The public-facing acquisition wedge is **RescueMyWebsite**: fix the website, fix the funnel, fix the follow-up. The full operating model extends beyond websites into every revenue-critical system a small service business runs.
+
+**Core problem set**: weak online presence, missed leads, poor follow-up, booking friction, no repeatable delivery systems.
 
 ---
 
-## 1. SITUATION OVERVIEW
+## The Operating Model: Acquire → Convert → Deliver → Retain
 
-The Agency comprises specialized AI agents across 9 divisions — engineering, design, marketing, product, project management, testing, support, spatial computing, and specialized operations. Individually, each agent delivers expert-level output. **Without coordination, they produce conflicting decisions, duplicated effort, and quality gaps at handoff boundaries.** NEXUS transforms this collection into an orchestrated intelligence network with defined pipelines, quality gates, and measurable outcomes.
+Every client engagement maps to one or more phases of the ACDR loop:
 
-## 2. KEY FINDINGS
+| Phase | What We Fix | Key Outputs |
+|-------|------------|-------------|
+| **Acquire** | Website, local SEO, Google Business Profile, trust signals, lead capture | Live site, GBP optimized, structured data, review presence |
+| **Convert** | Speed-to-lead, follow-up automations, booking flows, sales pipelines | GHL pipeline, booking widget, automated nurture sequences |
+| **Deliver** | Implementation, QA, automation, reporting, handoff | QA-signed deliverables, SOPs, evidence packages, client preview |
+| **Retain** | Review generation, nurture campaigns, recurring reporting, optimization | Monthly reports, review velocity, upsell touchpoints, SOP updates |
 
-**Finding 1**: Multi-agent projects fail at handoff boundaries 73% of the time when agents lack structured coordination protocols. **Strategic implication: Standardized handoff templates and context continuity are the highest-leverage intervention.**
+The loop is continuous. Retained clients re-enter Acquire and Convert with improvements as data accumulates.
 
-**Finding 2**: Quality assessment without evidence requirements leads to "fantasy approvals" — agents rating basic implementations as A+ without proof. **Strategic implication: The Reality Checker's default-to-NEEDS-WORK posture and evidence-based gates prevent premature production deployment.**
+---
 
-**Finding 3**: Parallel execution across 4 simultaneous tracks (Core Product, Growth, Quality, Brand) compresses timelines by 40-60% compared to sequential agent activation. **Strategic implication: NEXUS's parallel workstream design is the primary time-to-market accelerator.**
+## Agent Division Structure
 
-**Finding 4**: The Dev↔QA loop (build → test → pass/fail → retry) with a 3-attempt maximum catches 95% of defects before integration, reducing Phase 4 hardening time by 50%. **Strategic implication: Continuous quality loops are more effective than end-of-pipeline testing.**
+| Division | Primary ACDR Role | Key Responsibilities |
+|----------|------------------|---------------------|
+| **Strategy** | All phases | Coordination, playbooks, doctrine, QA gates |
+| **Marketing** | Acquire, Retain | SEO, content, GBP, authority campaigns, nurture |
+| **Web / Design** | Acquire, Deliver | Website builds, landing pages, brand, visual QA |
+| **Automation** | Convert, Deliver | GHL config, n8n workflows, pipeline setup, integrations |
+| **QA** | Deliver | Evidence collection, testing, client preview packages |
+| **Operations** | Deliver, Retain | Project coordination, reporting, SOP capture |
+| **Support** | Retain | Client communication, escalation handling, review management |
 
-## 3. BUSINESS IMPACT
+---
 
-**Efficiency Gain**: 40-60% timeline compression through parallel execution and structured handoffs, translating to 4-8 weeks saved on a typical 16-week project.
+## Quality Gates
 
-**Quality Improvement**: Evidence-based quality gates reduce production defects by an estimated 80%, with the Reality Checker serving as the final defense against premature deployment.
+Quality gates apply at every phase transition. No phase advances without a signed-off handoff.
 
-**Risk Reduction**: Structured escalation protocols, maximum retry limits, and phase-gate governance prevent runaway projects and ensure early visibility into blockers.
+| Gate | Trigger | Requirement |
+|------|---------|-------------|
+| Discovery → Strategy | Audit complete | Audit doc signed, gaps identified |
+| Strategy → Foundation | Scope agreed | Signed scope, GHL sub-account created |
+| Foundation → Build | Infra ready | Domain/hosting live, GHL pipeline configured |
+| Build → QA | Build complete | All deliverables submitted with evidence |
+| QA → Launch | QA pass | QA checklist signed, client preview approved |
+| Launch → Operate | Go-live confirmed | DNS live, monitoring active, handoff doc sent |
 
-## 4. WHAT NEXUS DELIVERS
+**QA Standard**: Default posture is NEEDS WORK. Evidence (screenshots, test results, Loom walkthroughs) required for any PASS. Maximum 2 revision cycles before escalation to lead.
 
-| Deliverable | Description |
-|-------------|-------------|
-| **Master Strategy** | 800+ line operational doctrine covering all agents across 7 phases |
-| **Phase Playbooks** (7) | Step-by-step activation sequences with agent prompts, timelines, and quality gates |
-| **Activation Prompts** | Ready-to-use prompt templates for every agent in every pipeline role |
-| **Handoff Templates** (7) | Standardized formats for QA pass/fail, escalation, phase gates, sprints, incidents |
-| **Scenario Runbooks** (4) | Pre-built configurations for Startup MVP, Enterprise Feature, Marketing Campaign, Incident Response |
-| **Quick-Start Guide** | 5-minute guide to activating any NEXUS mode |
+---
 
-## 5. THREE DEPLOYMENT MODES
+## Deployment Modes
 
-| Mode | Agents | Timeline | Use Case |
-|------|--------|----------|----------|
-| **NEXUS-Full** | All | 12-24 weeks | Complete product lifecycle |
-| **NEXUS-Sprint** | 15-25 | 2-6 weeks | Feature or MVP build |
-| **NEXUS-Micro** | 5-10 | 1-5 days | Targeted task execution |
+| Mode | Scope | Timeline | Typical Use |
+|------|-------|----------|-------------|
+| **Full Engagement** | All 7 phases | 6–10 weeks | New client: audit → launch → first 30 days retained |
+| **Build Sprint** | Phases 2–4 | 2–3 weeks | Existing client adding pipeline or automation |
+| **Micro Task** | Single deliverable | 1–5 days | SEO audit, GBP fix, single automation, content batch |
 
-## 6. RECOMMENDATIONS
+---
 
-**[Critical]**: Adopt NEXUS-Sprint as the default mode for all new feature development — Owner: Engineering Lead | Timeline: Immediate | Expected Result: 40% faster delivery with higher quality
+## Business Rules
 
-**[High]**: Implement the Dev↔QA loop for all implementation work, even outside formal NEXUS pipelines — Owner: QA Lead | Timeline: 2 weeks | Expected Result: 80% reduction in production defects
-
-**[High]**: Use the Incident Response Runbook for all P0/P1 incidents — Owner: Infrastructure Lead | Timeline: 1 week | Expected Result: < 30 minute MTTR
-
-**[Medium]**: Run quarterly NEXUS-Full strategic reviews using Phase 0 agents — Owner: Product Lead | Timeline: Quarterly | Expected Result: Data-driven product strategy with 3-6 month market foresight
-
-## 7. NEXT STEPS
-
-1. **Select a pilot project** for NEXUS-Sprint deployment — Deadline: This week
-2. **Brief all team leads** on NEXUS playbooks and handoff protocols — Deadline: 10 days
-3. **Activate first NEXUS pipeline** using the Quick-Start Guide — Deadline: 2 weeks
-
-**Decision Point**: Approve NEXUS as the standard operating model for multi-agent coordination by end of month.
+- Lowest total cost of good work beats cheapest output. Weak output that creates rework is not acceptable.
+- Good enough and live beats perfect and stalled — but only when quality gates have been cleared.
+- Every active role must support acquisition, conversion, delivery, retention, compliance, or reusable systems.
+- Reusable SOPs, templates, GHL snapshots, checklists, and playbooks are valuable outputs, not overhead.
+- Specialists execute. Leads prioritize, coordinate, inspect, and escalate.
 
 ---
 
@@ -71,25 +80,21 @@ The Agency comprises specialized AI agents across 9 divisions — engineering, d
 strategy/
 ├── EXECUTIVE-BRIEF.md              ← You are here
 ├── QUICKSTART.md                   ← 5-minute activation guide
-├── nexus-strategy.md               ← Complete operational doctrine
+├── nexus-strategy.md               ← RescueMyWorkday Operating Doctrine
 ├── playbooks/
-│   ├── phase-0-discovery.md        ← Intelligence & discovery
-│   ├── phase-1-strategy.md         ← Strategy & architecture
-│   ├── phase-2-foundation.md       ← Foundation & scaffolding
-│   ├── phase-3-build.md            ← Build & iterate (Dev↔QA loops)
-│   ├── phase-4-hardening.md        ← Quality & hardening
-│   ├── phase-5-launch.md           ← Launch & growth
-│   └── phase-6-operate.md          ← Operate & evolve
+│   ├── phase-0-discovery.md        ← Client discovery & audit
+│   ├── phase-1-strategy.md         ← Strategy & recommendations
+│   ├── phase-2-foundation.md       ← GHL setup, infra, pipeline config
+│   ├── phase-3-build.md            ← Website, automations, content
+│   ├── phase-4-hardening.md        ← QA, testing, client preview
+│   ├── phase-5-launch.md           ← Go-live, DNS, handoff
+│   └── phase-6-operate.md          ← Reviews, reporting, retention
 ├── coordination/
-│   ├── agent-activation-prompts.md ← Ready-to-use agent prompts
+│   ├── agent-activation-prompts.md ← Ready-to-use activation prompts
 │   └── handoff-templates.md        ← Standardized handoff formats
 └── runbooks/
-    ├── scenario-startup-mvp.md     ← 4-6 week MVP build
-    ├── scenario-enterprise-feature.md ← Enterprise feature development
-    ├── scenario-marketing-campaign.md ← Multi-channel campaign
-    └── scenario-incident-response.md  ← Production incident handling
+    ├── scenario-new-client-website.md    ← End-to-end website build
+    ├── scenario-client-escalation.md     ← Client issue / escalation handling
+    ├── scenario-seo-authority-campaign.md← Local SEO authority push
+    └── scenario-pipeline-buildout.md     ← GHL pipeline from scratch
 ```
-
----
-
-*NEXUS: 9 Divisions. 7 Phases. One Unified Strategy.*

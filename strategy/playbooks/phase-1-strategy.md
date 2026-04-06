@@ -1,238 +1,126 @@
-# 🏗️ Phase 1 Playbook — Strategy & Architecture
+# Phase 1 — Strategy & Recommendations
 
-> **Duration**: 5-10 days | **Agents**: 8 | **Gate Keepers**: Studio Producer + Reality Checker
+**Objective**: Turn discovery findings into a clear, agreed scope. Client knows what we're building, why, and in what order.
+
+**Agents**: Strategy Lead (lead), Operations Lead (support)
+**Duration**: 1–2 days (plus client review time)
+**Output**: Strategy doc, prioritized recommendation list, signed scope
 
 ---
 
-## Objective
+## Inputs Required Before Starting
 
-Define what we're building, how it's structured, and what success looks like — before writing a single line of code. Every architectural decision is documented. Every feature is prioritized. Every dollar is accounted for.
+- [ ] Completed Phase 0 discovery audit (quality gate cleared)
+- [ ] Client's stated budget range (if known)
+- [ ] Client's target launch date (if any)
+- [ ] Any hard constraints (e.g., "can't change the domain", "must keep logo")
 
-## Pre-Conditions
+---
 
-- [ ] Phase 0 Quality Gate passed (GO decision)
-- [ ] Phase 0 Handoff Package received
-- [ ] Stakeholder alignment on project scope
+## Step 1: Prioritize Findings from Audit
 
-## Agent Activation Sequence
+Using the Phase 0 audit, sort all findings into:
 
-### Step 1: Strategic Framing (Day 1-3, Parallel)
+**Must Fix (blocks revenue)**
+- Broken contact form
+- No mobile CTA
+- GBP not claimed or severely incomplete
+- No speed-to-lead follow-up
+- Site not indexable or loading in >5s mobile
 
-#### 🎬 Studio Producer — Strategic Portfolio Alignment
+**High Value (strong ROI)**
+- Website redesign / rebuild
+- GBP optimization and photo upload
+- Speed-to-lead automation
+- Review generation system
+- Service/location pages
+
+**Good to Have (optimization)**
+- Blog content
+- Schema markup improvements
+- Advanced nurture sequences
+- Reporting dashboard
+
+---
+
+## Step 2: Design the Offer / Scope
+
+Based on priority tier and budget range, define the engagement scope:
+
 ```
-Activate Studio Producer for strategic portfolio alignment on [PROJECT].
+SCOPE SUMMARY — [CLIENT NAME]
+──────────────────────────────
+Engagement type: Full Engagement / Build Sprint / Micro Task
+ACDR phases covered: [list phases]
 
-Input: Phase 0 Executive Summary + Market Analysis Report
-Deliverables required:
-1. Strategic Portfolio Plan with project positioning
-2. Vision, objectives, and ROI targets
-3. Resource allocation strategy
-4. Risk/reward assessment
-5. Success criteria and milestone definitions
+INCLUDED
+- [ ] Website: [brief description — pages, requirements]
+- [ ] GHL setup: [pipeline, automations — describe]
+- [ ] SEO: [on-page, GBP, citations — describe]
+- [ ] Content: [what's included]
+- [ ] Reporting: [what's included]
 
-Align with: Organizational strategic objectives
-Format: Strategic Portfolio Plan Template
-Timeline: 3 days
-```
+NOT INCLUDED IN THIS SCOPE
+- [Item and reason]
+- [Item and reason]
 
-#### 🎭 Brand Guardian — Brand Identity System
-```
-Activate Brand Guardian for brand identity development on [PROJECT].
+ASSUMPTIONS
+- Client provides: [logo, photos, copy — or note if we're writing copy]
+- Timeline: [X weeks from scope sign-off]
+- Revisions: 2 rounds included
 
-Input: Phase 0 UX Research (personas, journey maps)
-Deliverables required:
-1. Brand Foundation (purpose, vision, mission, values, personality)
-2. Visual Identity System (colors, typography, spacing as CSS variables)
-3. Brand Voice and Messaging Architecture
-4. Logo system specifications (if new brand)
-5. Brand usage guidelines
-
-Format: Brand Identity System Document
-Timeline: 3 days
-```
-
-#### 💰 Finance Tracker — Budget and Resource Planning
-```
-Activate Finance Tracker for financial planning on [PROJECT].
-
-Input: Studio Producer strategic plan + Phase 0 Tech Stack Assessment
-Deliverables required:
-1. Comprehensive project budget with category breakdown
-2. Resource cost projections (agents, infrastructure, tools)
-3. ROI model with break-even analysis
-4. Cash flow timeline
-5. Financial risk assessment with contingency reserves
-
-Format: Financial Plan with ROI Projections
-Timeline: 2 days
-```
-
-### Step 2: Technical Architecture (Day 3-7, Parallel, after Step 1 outputs available)
-
-#### 🏛️ UX Architect — Technical Architecture + UX Foundation
-```
-Activate UX Architect for technical architecture on [PROJECT].
-
-Input: Brand Guardian visual identity + Phase 0 UX Research
-Deliverables required:
-1. CSS Design System (variables, tokens, scales)
-2. Layout Framework (Grid/Flexbox patterns, responsive breakpoints)
-3. Component Architecture (naming conventions, hierarchy)
-4. Information Architecture (page flow, content hierarchy)
-5. Theme System (light/dark/system toggle)
-6. Accessibility Foundation (WCAG 2.1 AA baseline)
-
-Files to create:
-- css/design-system.css
-- css/layout.css
-- css/components.css
-- docs/ux-architecture.md
-
-Format: Developer-Ready Foundation Package
-Timeline: 4 days
-```
-
-#### 🏗️ Backend Architect — System Architecture
-```
-Activate Backend Architect for system architecture on [PROJECT].
-
-Input: Phase 0 Tech Stack Assessment + Compliance Requirements
-Deliverables required:
-1. System Architecture Specification
-   - Architecture pattern (microservices/monolith/serverless/hybrid)
-   - Communication pattern (REST/GraphQL/gRPC/event-driven)
-   - Data pattern (CQRS/Event Sourcing/CRUD)
-2. Database Schema Design with indexing strategy
-3. API Design Specification with versioning
-4. Authentication and Authorization Architecture
-5. Security Architecture (defense in depth)
-6. Scalability Plan (horizontal scaling strategy)
-
-Format: System Architecture Specification
-Timeline: 4 days
-```
-
-#### 🤖 AI Engineer — ML Architecture (if applicable)
-```
-Activate AI Engineer for ML system architecture on [PROJECT].
-
-Input: Backend Architect system architecture + Phase 0 Data Audit
-Deliverables required:
-1. ML System Design
-   - Model selection and training strategy
-   - Data pipeline architecture
-   - Inference strategy (real-time/batch/edge)
-2. AI Ethics and Safety Framework
-3. Model monitoring and retraining plan
-4. Integration points with main application
-5. Cost projections for ML infrastructure
-
-Condition: Only activate if project includes AI/ML features
-Format: ML System Design Document
-Timeline: 3 days
-```
-
-#### 👔 Senior Project Manager — Spec-to-Task Conversion
-```
-Activate Senior Project Manager for task list creation on [PROJECT].
-
-Input: ALL Phase 0 documents + Architecture specs (as available)
-Deliverables required:
-1. Comprehensive Task List
-   - Quote EXACT requirements from spec (no luxury features)
-   - Each task has clear acceptance criteria
-   - Dependencies mapped between tasks
-   - Effort estimates (story points or hours)
-2. Work Breakdown Structure
-3. Critical path identification
-4. Risk register for implementation
-
-Rules:
-- Do NOT add features not in the specification
-- Quote exact text from requirements
-- Be realistic about effort estimates
-
-Format: Task List with acceptance criteria
-Timeline: 3 days
-```
-
-### Step 3: Prioritization (Day 7-10, Sequential, after Step 2)
-
-#### 🎯 Sprint Prioritizer — Feature Prioritization
-```
-Activate Sprint Prioritizer for backlog prioritization on [PROJECT].
-
-Input:
-- Senior Project Manager → Task List
-- Backend Architect → System Architecture
-- UX Architect → UX Architecture
-- Finance Tracker → Budget Framework
-- Studio Producer → Strategic Plan
-
-Deliverables required:
-1. RICE-scored backlog (Reach, Impact, Confidence, Effort)
-2. Sprint assignments with velocity-based estimation
-3. Dependency map with critical path
-4. MoSCoW classification (Must/Should/Could/Won't)
-5. Release plan with milestone mapping
-
-Validation: Studio Producer confirms strategic alignment
-Format: Prioritized Sprint Plan
-Timeline: 2 days
-```
-
-## Quality Gate Checklist
-
-| # | Criterion | Evidence Source | Status |
-|---|-----------|----------------|--------|
-| 1 | Architecture covers 100% of spec requirements | Senior PM task list cross-referenced with architecture | ☐ |
-| 2 | Brand system complete (logo, colors, typography, voice) | Brand Guardian deliverable | ☐ |
-| 3 | All technical components have implementation path | Backend Architect + UX Architect specs | ☐ |
-| 4 | Budget approved and within constraints | Finance Tracker plan | ☐ |
-| 5 | Sprint plan is velocity-based and realistic | Sprint Prioritizer backlog | ☐ |
-| 6 | Security architecture defined | Backend Architect security spec | ☐ |
-| 7 | Compliance requirements integrated into architecture | Legal requirements mapped to technical decisions | ☐ |
-
-## Gate Decision
-
-**Dual sign-off required**: Studio Producer (strategic) + Reality Checker (technical)
-
-- **APPROVED**: Proceed to Phase 2 with full Architecture Package
-- **REVISE**: Specific items need rework (return to relevant Step)
-- **RESTRUCTURE**: Fundamental architecture issues (restart Phase 1)
-
-## Handoff to Phase 2
-
-```markdown
-## Phase 1 → Phase 2 Handoff Package
-
-### Architecture Package:
-1. Strategic Portfolio Plan (Studio Producer)
-2. Brand Identity System (Brand Guardian)
-3. Financial Plan (Finance Tracker)
-4. CSS Design System + UX Architecture (UX Architect)
-5. System Architecture Specification (Backend Architect)
-6. ML System Design (AI Engineer — if applicable)
-7. Comprehensive Task List (Senior Project Manager)
-8. Prioritized Sprint Plan (Sprint Prioritizer)
-
-### For DevOps Automator:
-- Deployment architecture from Backend Architect
-- Environment requirements from System Architecture
-- Monitoring requirements from Infrastructure needs
-
-### For Frontend Developer:
-- CSS Design System from UX Architect
-- Brand Identity from Brand Guardian
-- Component architecture from UX Architect
-- API specification from Backend Architect
-
-### For Backend Architect (continuing):
-- Database schema ready for deployment
-- API scaffold ready for implementation
-- Auth system architecture defined
+INVESTMENT: [range or fixed, or "TBD"]
 ```
 
 ---
 
-*Phase 1 is complete when Studio Producer and Reality Checker both sign off on the Architecture Package.*
+## Step 3: Build the Phase Plan
+
+Map deliverables to phases with realistic timelines:
+
+| Week | Phase | Milestone |
+|------|-------|-----------|
+| 1 | Phase 2: Foundation | GHL sub-account created, domain/hosting confirmed |
+| 1–2 | Phase 3: Build | Website staging started, automations built |
+| 2–3 | Phase 3 continued | Content, forms, integrations |
+| 3 | Phase 4: QA | Full QA pass, client preview |
+| 4 | Phase 5: Launch | DNS, go-live, handoff |
+| Ongoing | Phase 6: Operate | Monthly reporting, reviews, optimization |
+
+Adjust based on complexity and client response time.
+
+---
+
+## Step 4: Present to Client
+
+Deliver the strategy in whatever format the client prefers (doc, call, email summary). Cover:
+
+1. **What we found** — 3–5 key findings, not an exhaustive list
+2. **What we recommend** — prioritized, with brief rationale
+3. **What we'll do** — the scope, in plain language
+4. **What we need from you** — assets, decisions, approvals
+5. **Timeline and next steps**
+
+---
+
+## Step 5: Confirm Scope Sign-Off
+
+Before moving to Phase 2:
+- [ ] Client has reviewed scope doc
+- [ ] Any scope changes have been incorporated
+- [ ] Client has verbally or in writing confirmed they want to proceed
+- [ ] Payment or engagement terms confirmed per business process
+
+---
+
+## Quality Gate: Phase 1 → Phase 2
+
+PASS requires:
+- [ ] Strategy doc complete with prioritized recommendations
+- [ ] Scope doc written and reviewed
+- [ ] Client has confirmed scope (verbal or written)
+- [ ] Phase plan with week-by-week milestones documented
+- [ ] Assets needed from client identified and requested
+- [ ] Operations Lead briefed on timeline and deliverables
+
+Do not begin foundation work until scope is confirmed.
